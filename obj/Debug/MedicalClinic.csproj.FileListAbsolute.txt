@@ -1,0 +1,19 @@
+C:\Users\morae\AppData\Local\Temporary Projects\MedicalClinic\bin\Debug\MedicalClinic.exe.config
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\MedicalClinic\bin\Debug\MedicalClinic.exe.config
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\MedicalClinic.exe.config
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\database.db
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\MedicalClinic.exe
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\MedicalClinic.pdb
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\EntityFramework.dll
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\System.Data.SQLite.dll
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\EntityFramework.xml
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\bin\Debug\System.Data.SQLite.xml
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\obj\Debug\MedicalClinic.csprojResolveAssemblyReference.cache
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\obj\Debug\MedicalClinic.Properties.Resources.resources
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\obj\Debug\MedicalClinic.csproj.GenerateResource.Cache
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\obj\Debug\MedicalClinic.exe
+C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\obj\Debug\MedicalClinic.pdb

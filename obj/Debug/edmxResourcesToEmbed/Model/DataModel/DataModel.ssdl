@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="databaseModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\morae\Documents\Projects\MedicalClinic-SoftwareEng\database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="person_id" Type="integer" Nullable="false" />
+    <Property Name="healthplan_id" Type="integer" />
+    <Property Name="schedule" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Doctor_Appointment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctor_id" Type="integer" Nullable="false" />
+    <Property Name="appointment_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exam">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="person_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Healthplan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medicine_Prescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="medicine_id" Type="integer" Nullable="false" />
+    <Property Name="prescription_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schedule" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="total" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="paymentform" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="plotn" Type="integer" Nullable="false" />
+    <Property Name="plottotal" Type="integer" Nullable="false" />
+    <Property Name="person_id" Type="integer" Nullable="false" />
+    <Property Name="productsale_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="age" Type="integer" />
+    <Property Name="phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="specialization_id" Type="integer" />
+  </EntityType>
+  <EntityType Name="Person_Healthplan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="person_id" Type="integer" />
+    <Property Name="healthplan_id" Type="integer" />
+  </EntityType>
+  <EntityType Name="Prescription">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="integer" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="stock" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_Productsale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="integer" Nullable="false" />
+    <Property Name="productsale_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productsale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="person_id" Type="integer" Nullable="false" />
+    <Property Name="schedule" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="quantity" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service_Servicesheduling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="integer" Nullable="false" />
+    <Property Name="servicescheduling_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servicescheduling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schedule" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="person_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specialization">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="databaseModelStoreContainer">
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" store:Type="Tables" />
+    <EntitySet Name="Doctor_Appointment" EntityType="Self.Doctor_Appointment" store:Type="Tables" />
+    <EntitySet Name="Exam" EntityType="Self.Exam" store:Type="Tables" />
+    <EntitySet Name="Healthplan" EntityType="Self.Healthplan" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" store:Type="Tables" />
+    <EntitySet Name="Medicine_Prescription" EntityType="Self.Medicine_Prescription" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" store:Type="Tables" />
+    <EntitySet Name="Person_Healthplan" EntityType="Self.Person_Healthplan" store:Type="Tables" />
+    <EntitySet Name="Prescription" EntityType="Self.Prescription" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" store:Type="Tables" />
+    <EntitySet Name="Product_Productsale" EntityType="Self.Product_Productsale" store:Type="Tables" />
+    <EntitySet Name="Productsale" EntityType="Self.Productsale" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" store:Type="Tables" />
+    <EntitySet Name="Service_Servicesheduling" EntityType="Self.Service_Servicesheduling" store:Type="Tables" />
+    <EntitySet Name="Servicescheduling" EntityType="Self.Servicescheduling" store:Type="Tables" />
+    <EntitySet Name="Specialization" EntityType="Self.Specialization" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
