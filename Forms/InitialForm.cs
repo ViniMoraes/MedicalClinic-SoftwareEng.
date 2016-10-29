@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MedicalClinic
+namespace MedicalClinic.Forms
 {
-    public partial class Form1 : Form
+    public partial class InitialForm : Form
     {
-        public Form1()
+        public InitialForm()
         {
             InitializeComponent();
         }

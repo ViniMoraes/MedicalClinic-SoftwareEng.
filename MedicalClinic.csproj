@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\InitialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InitialForm.Designer.cs">
+      <DependentUpon>InitialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataModel\Appointment.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -94,10 +100,6 @@
     </Compile>
     <Compile Include="Model\DataModel\Exam.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs" />
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DataModel\Healthplan.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
