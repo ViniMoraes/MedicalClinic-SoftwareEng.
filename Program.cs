@@ -16,7 +16,7 @@ namespace MedicalClinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
-            Application.Run(new Forms.InitialForm());
+            Application.Run(new Form());
         }
     }
 }

@@ -71,12 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\InitialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InitialForm.Designer.cs">
-      <DependentUpon>InitialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\DataModel\Appointment.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
