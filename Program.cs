@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MedicalClinic.Forms;
 namespace MedicalClinic
 {
     static class Program
@@ -16,7 +16,7 @@ namespace MedicalClinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
-            Application.Run(new Form());
+            Application.Run(new Clinic_SPA());
         }
     }
 }
