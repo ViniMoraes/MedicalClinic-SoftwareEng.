@@ -7,21 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
+using MetroFramework.Forms;
+using MetroFramework.Controls;
+using static MedicalClinic.SlidePanel;
 
 namespace MedicalClinic.Forms
 {
-    public partial class Clinic_SPA : MaterialForm
+    public partial class Clinic_SPA : MetroForm
     {
+
+        MetroPanel actualPanel;
         public Clinic_SPA()
         {
             InitializeComponent();
+            actualPanel = panel_initialPanel;
+        }
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+        private void btn_goSPA_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_goClinic_Click(object sender, EventArgs e)
+        {
+            MetroPanel newPanel = new Panel.ClinicPanel();
+            Controls.Add(newPanel);
+            SlidePanel.setPanel(Slide.Right, newPanel, actualPanel);
+            Controls.Remove(actualPanel);
+            actualPanel.Dispose();
+            actualPanel = newPanel;
         }
     }
 }

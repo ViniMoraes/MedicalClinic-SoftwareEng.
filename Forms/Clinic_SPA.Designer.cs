@@ -28,110 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.btn_goClinic = new MetroFramework.Controls.MetroButton();
+            this.btn_goSPA = new MetroFramework.Controls.MetroButton();
+            this.panel_initialPanel = new MetroFramework.Controls.MetroPanel();
+            this.panel_initialPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialFlatButton1
+            // btn_goClinic
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(306, 248);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton1.TabIndex = 0;
-            this.materialFlatButton1.Text = "materialFlatButton1";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.btn_goClinic.Location = new System.Drawing.Point(80, 158);
+            this.btn_goClinic.Name = "btn_goClinic";
+            this.btn_goClinic.Size = new System.Drawing.Size(195, 82);
+            this.btn_goClinic.TabIndex = 0;
+            this.btn_goClinic.Text = "Clinica";
+            this.btn_goClinic.Click += new System.EventHandler(this.btn_goClinic_Click);
             // 
-            // materialFlatButton2
+            // btn_goSPA
             // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Location = new System.Drawing.Point(53, 248);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton2.TabIndex = 1;
-            this.materialFlatButton2.Text = "materialFlatButton2";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.btn_goSPA.Location = new System.Drawing.Point(330, 158);
+            this.btn_goSPA.Name = "btn_goSPA";
+            this.btn_goSPA.Size = new System.Drawing.Size(195, 82);
+            this.btn_goSPA.TabIndex = 0;
+            this.btn_goSPA.Text = "SPA";
+            this.btn_goSPA.Click += new System.EventHandler(this.btn_goSPA_Click);
             // 
-            // materialRaisedButton1
+            // panel_initialPanel
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(171, 317);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(209, 44);
-            this.materialRaisedButton1.TabIndex = 2;
-            this.materialRaisedButton1.Text = "materialRaisedButton1";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(105, 128);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(314, 23);
-            this.materialSingleLineTextField1.TabIndex = 3;
-            this.materialSingleLineTextField1.Text = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            // 
-            // materialCheckBox1
-            // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(105, 164);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(150, 30);
-            this.materialCheckBox1.TabIndex = 4;
-            this.materialCheckBox1.Text = "materialCheckBox1";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
+            this.panel_initialPanel.Controls.Add(this.btn_goClinic);
+            this.panel_initialPanel.Controls.Add(this.btn_goSPA);
+            this.panel_initialPanel.HorizontalScrollbarBarColor = true;
+            this.panel_initialPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.panel_initialPanel.HorizontalScrollbarSize = 10;
+            this.panel_initialPanel.Location = new System.Drawing.Point(1, 50);
+            this.panel_initialPanel.Name = "panel_initialPanel";
+            this.panel_initialPanel.Size = new System.Drawing.Size(589, 377);
+            this.panel_initialPanel.TabIndex = 1;
+            this.panel_initialPanel.VerticalScrollbarBarColor = true;
+            this.panel_initialPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.panel_initialPanel.VerticalScrollbarSize = 10;
             // 
             // Clinic_SPA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 415);
-            this.Controls.Add(this.materialCheckBox1);
-            this.Controls.Add(this.materialSingleLineTextField1);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.materialFlatButton2);
-            this.Controls.Add(this.materialFlatButton1);
+            this.ClientSize = new System.Drawing.Size(590, 424);
+            this.Controls.Add(this.panel_initialPanel);
             this.Name = "Clinic_SPA";
             this.Text = "Clinic_SPA";
+            this.panel_initialPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
+        private MetroFramework.Controls.MetroButton btn_goClinic;
+        private MetroFramework.Controls.MetroButton btn_goSPA;
+        private MetroFramework.Controls.MetroPanel panel_initialPanel;
     }
 }
