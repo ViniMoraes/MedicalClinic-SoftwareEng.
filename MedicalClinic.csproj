@@ -157,10 +157,7 @@
     <Compile Include="Panel\ClinicPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Panel\DoctorPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Panel\PacientPanel.cs">
+    <Compile Include="Panel\ListViewPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />

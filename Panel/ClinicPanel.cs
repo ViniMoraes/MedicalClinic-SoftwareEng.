@@ -19,7 +19,7 @@ namespace MedicalClinic.Panel
         //Convenios -   4
         //receitas -    5
 
-        private enum PanelPosition
+        public enum PanelPosition
         {
             Schedule = 1,
             Doctor,
@@ -28,7 +28,7 @@ namespace MedicalClinic.Panel
             Prescription
         };
 
-        private PanelPosition actualPosition = PanelPosition.Schedule;
+        private PanelPosition actualPosition = 0;
         public MetroPanel lastPanel { get; set; }
 
         private void initializeComponent()
@@ -131,58 +131,53 @@ namespace MedicalClinic.Panel
             //Convenios -   4
             //receitas -    5
 
-            btn_clinicDoctors.MouseClick += Btn_clinicDoctors_MouseClick;
-            btn_clinicPacients.MouseClick += Btn_clinicPacients_MouseClick;
+            //Inicializa em schedule
+            switchPanel(PanelPosition.Schedule);
+
+            btn_clinicSchedule.MouseClick += delegate {
+                switchPanel(PanelPosition.Schedule);
+            };
+            btn_clinicDoctors.MouseClick += delegate {
+                switchPanel(PanelPosition.Doctor);
+            };
+            btn_clinicPacients.MouseClick += delegate {
+                switchPanel(PanelPosition.Pacient);
+            };
+            btn_clinicHealtPlan.MouseClick += delegate {
+                switchPanel(PanelPosition.HealthPlan);
+            };
+            btn_clinicPrescription.MouseClick += delegate {
+                switchPanel(PanelPosition.Prescription);
+            };
 
             btn_clinicBack.MouseClick += Btn_clinicBack_MouseClick;
 
         }
 
-        private void Btn_clinicPacients_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            SlidePanel.Slide slideType;
-
-            if (PanelPosition.Pacient == actualPosition)
-                return;
-
-            if (PanelPosition.Pacient > actualPosition)
-                slideType = SlidePanel.Slide.Up;
-            else
-                slideType = SlidePanel.Slide.Down;
-
-                MetroPanel pacientPanel = new PacientPanel();
-                this.Controls.Add(pacientPanel);
-                SlidePanel.setPanel(slideType, pacientPanel, this.panel_clinicInside);
-                this.Controls.Remove(panel_clinicInside);
-                panel_clinicInside.Dispose();
-                panel_clinicInside = pacientPanel;
-                actualPosition = PanelPosition.Pacient;
-        }
-
-        private void Btn_clinicDoctors_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            SlidePanel.Slide slideType;
-
-            if (PanelPosition.Doctor == actualPosition)
-                return;
-
-            if (PanelPosition.Doctor > actualPosition)
-                slideType = SlidePanel.Slide.Up;
-            else
-                slideType = SlidePanel.Slide.Down;
-                
-                MetroPanel doctorPanel = new DoctorPanel();
-                this.Controls.Add(doctorPanel);
-                SlidePanel.setPanel(slideType, doctorPanel, this.panel_clinicInside);
-                this.Controls.Remove(panel_clinicInside);
-                panel_clinicInside.Dispose();
-                panel_clinicInside = doctorPanel;
-                actualPosition = PanelPosition.Doctor;
-        }
-
         private void Btn_clinicBack_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void switchPanel(PanelPosition panelPosition){
+            SlidePanel.Slide slideType;
+
+            if (panelPosition == actualPosition)
+                return;
+
+            MetroPanel panel = new ListViewPanel((int) panelPosition);
+
+            if (panelPosition > actualPosition)
+                slideType = SlidePanel.Slide.Up;
+            else
+                slideType = SlidePanel.Slide.Down;
+
+            this.Controls.Add(panel);
+            SlidePanel.setPanel(slideType, panel, this.panel_clinicInside);
+            this.Controls.Remove(panel_clinicInside);
+            panel_clinicInside.Dispose();
+            panel_clinicInside = panel;
+            actualPosition = panelPosition;
         }
 
         private MetroFramework.Controls.MetroPanel panel_clinicInside;
