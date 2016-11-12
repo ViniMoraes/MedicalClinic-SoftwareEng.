@@ -87,6 +87,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="databaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Clinic_SPA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PartialClasses.cs" />
+    <Compile Include="Panel\AppointmentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panel\ClinicPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -197,6 +205,17 @@
     <Content Include="database.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="databaseDataSet.xsc">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="databaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>databaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="databaseDataSet.xss">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model\DataModel\DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
     </None>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Controls;
 using static MedicalClinic.Panel.ClinicPanel;
+using System.Windows.Forms;
 
 namespace MedicalClinic.Panel
 {
@@ -13,6 +14,7 @@ namespace MedicalClinic.Panel
         public ListViewPanel(int panelPosition)
         { 
             initializeComponent();
+            loadList("0");
         }
 
         private void initializeComponent()
@@ -72,11 +74,130 @@ namespace MedicalClinic.Panel
             this.btn_delete.Size = new System.Drawing.Size(112, 32);
             this.btn_delete.TabIndex = 3;
             this.btn_delete.Text = "Deletar";
+
+            this.btn_new.MouseClick += Btn_new_MouseClick; ;
+            this.btn_edit.MouseClick += Btn_edit_MouseClick;
+
         }
 
-        private void loadSchedule()
+        private void Btn_edit_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            ClinicPanel clinicPanel = ClinicPanel.getThis();
+            switch (clinicPanel.actualPosition)
+            {
+                case PanelPosition.Appointment:
+                    newAppointment(true);
+                    break;
+                case PanelPosition.Doctor:
+                    newDoctor(true);
+                    break;
+                case PanelPosition.Pacient:
+                    newPacient(true);
+                    break;
+                case PanelPosition.HealthPlan:
+                    newHealthPlan(true);
+                    break;
+                case PanelPosition.Prescription:
+                    newPrescription(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Btn_new_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            ClinicPanel clinicPanel = ClinicPanel.getThis();
+            switch (clinicPanel.actualPosition)
+            {
+                case PanelPosition.Appointment:
+                    newAppointment(false);
+                    break;
+                case PanelPosition.Doctor:
+                    newDoctor(false);
+                    break;
+                case PanelPosition.Pacient:
+                    newPacient(false);
+                    break;
+                case PanelPosition.HealthPlan:
+                    newHealthPlan(false);
+                    break;
+                case PanelPosition.Prescription:
+                    newPrescription(false);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void newAppointment(bool edit)
+        {
+            AppointmentPanel appointmentPanel = new AppointmentPanel();
+            if (edit)
+            {
+                //TODO
+            }
+            else
+            {
+                ClinicPanel clinicPanel = ClinicPanel.getThis();
+                clinicPanel.switchLateralPanel(appointmentPanel, SlidePanel.Slide.Left);
+            }
+        }
+
+        private void newDoctor(bool edit)
         {
 
+        }
+
+        private void newPacient(bool edit)
+        {
+
+        }
+
+        private void newHealthPlan(bool edit)
+        {
+
+        }
+
+        private void newPrescription(bool edit)
+        {
+
+        }
+
+        private void loadList(string model)
+        {
+            using (var dE = new Model.DataModel.databaseEntities())
+            {
+                clinic_listview.Clear();
+                var results = from a in dE.Appointments
+                    select new
+                    {
+                        Numero = a.id,
+                        Pessoa = a.person_id,
+                        Convênio = a.healthplan_id,
+                        Data = a.schedule
+                    };
+                string[] items = {"","Numero", "Pessoa", "Convênio", "Data" };
+                foreach (string s in items)
+                    clinic_listview.Columns.Add(s);
+
+                foreach (var i in results)
+                {
+                    ListViewItem lvitem = new ListViewItem();
+                        lvitem.SubItems.Add(i.Numero.ToString());
+                        lvitem.SubItems.Add(i.Pessoa.ToString());
+                        lvitem.SubItems.Add(i.Convênio.ToString());
+                    if (i.Data != null)
+                        lvitem.SubItems.Add(i.Data.ToString());
+                    else
+                        lvitem.SubItems.Add("Sem data registrada");
+                    clinic_listview.Items.Add(lvitem);
+                }
+
+            }
+            clinic_listview.MultiSelect = false;
+            clinic_listview.FullRowSelect = true;
+            clinic_listview.View = View.Details;      
         }
 
         private void loadDoctor()
@@ -89,7 +210,7 @@ namespace MedicalClinic.Panel
 
         }
 
-        private void loadHealthCare()
+        private void loadHealthPlan()
         {
 
         }

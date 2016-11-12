@@ -8,9 +8,12 @@ namespace MedicalClinic.Panel
 {
     class ClinicPanel : MetroPanel
     {
+        static ClinicPanel clinicPanel;
+
         public ClinicPanel()
         {
             initializeComponent();
+            clinicPanel = this;
         }
 
         //Agendamento - 1
@@ -21,14 +24,14 @@ namespace MedicalClinic.Panel
 
         public enum PanelPosition
         {
-            Schedule = 1,
+            Appointment = 1,
             Doctor,
             Pacient,
             HealthPlan,
             Prescription
         };
 
-        private PanelPosition actualPosition = 0;
+        public PanelPosition actualPosition = 0;
         public MetroPanel lastPanel { get; set; }
 
         private void initializeComponent()
@@ -132,10 +135,10 @@ namespace MedicalClinic.Panel
             //receitas -    5
 
             //Inicializa em schedule
-            switchPanel(PanelPosition.Schedule);
+            switchPanel(PanelPosition.Appointment);
 
             btn_clinicSchedule.MouseClick += delegate {
-                switchPanel(PanelPosition.Schedule);
+                switchPanel(PanelPosition.Appointment);
             };
             btn_clinicDoctors.MouseClick += delegate {
                 switchPanel(PanelPosition.Doctor);
@@ -178,6 +181,20 @@ namespace MedicalClinic.Panel
             panel_clinicInside.Dispose();
             panel_clinicInside = panel;
             actualPosition = panelPosition;
+        }
+
+        public void switchLateralPanel(MetroPanel panel, SlidePanel.Slide slideType)
+        {
+            this.Controls.Add(panel);
+            SlidePanel.setPanel(slideType, panel, this.panel_clinicInside);
+            this.Controls.Remove(panel_clinicInside);
+            panel_clinicInside.Dispose();
+            panel_clinicInside = panel;
+        }
+
+        public static ClinicPanel getThis()
+        {
+            return clinicPanel;
         }
 
         private MetroFramework.Controls.MetroPanel panel_clinicInside;

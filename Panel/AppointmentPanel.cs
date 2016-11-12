@@ -1,37 +1,23 @@
-﻿namespace MedicalClinic.Forms
-{
-    partial class TestForm
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MetroFramework.Controls;
+using MedicalClinic.Model.DataModel;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+namespace MedicalClinic.Panel
+{
+    class AppointmentPanel : MetroPanel
+    {
+
+        public AppointmentPanel()
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            InitializeComponent();
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.panel_Clinic = new MetroFramework.Controls.MetroPanel();
-            this.panel_clinicInside = new MetroFramework.Controls.MetroPanel();
-            this.cmb_healthPlan = new MetroFramework.Controls.MetroComboBox();
-            this.cmb_person = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -46,75 +32,32 @@
             this.btn_clinicPacients = new MetroFramework.Controls.MetroButton();
             this.btn_clinicDoctors = new MetroFramework.Controls.MetroButton();
             this.btn_clinicAppointment = new MetroFramework.Controls.MetroButton();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.panel_Clinic.SuspendLayout();
-            this.panel_clinicInside.SuspendLayout();
+            this.cmb_person = new MetroFramework.Controls.MetroComboBox();
+            this.cmb_healthPlan = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
-            // 
-            // panel_Clinic
-            // 
-            this.panel_Clinic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Clinic.Controls.Add(this.listView1);
-            this.panel_Clinic.Controls.Add(this.panel_clinicInside);
-            this.panel_Clinic.Controls.Add(this.btn_clinicBack);
-            this.panel_Clinic.Controls.Add(this.btn_clinicPrescription);
-            this.panel_Clinic.Controls.Add(this.btn_clinicHealtPlan);
-            this.panel_Clinic.Controls.Add(this.btn_clinicPacients);
-            this.panel_Clinic.Controls.Add(this.btn_clinicDoctors);
-            this.panel_Clinic.Controls.Add(this.btn_clinicAppointment);
-            this.panel_Clinic.HorizontalScrollbarBarColor = true;
-            this.panel_Clinic.HorizontalScrollbarHighlightOnWheel = false;
-            this.panel_Clinic.HorizontalScrollbarSize = 10;
-            this.panel_Clinic.Location = new System.Drawing.Point(0, 51);
-            this.panel_Clinic.Name = "panel_Clinic";
-            this.panel_Clinic.Size = new System.Drawing.Size(593, 333);
-            this.panel_Clinic.TabIndex = 0;
-            this.panel_Clinic.VerticalScrollbarBarColor = true;
-            this.panel_Clinic.VerticalScrollbarHighlightOnWheel = false;
-            this.panel_Clinic.VerticalScrollbarSize = 10;
             // 
             // panel_clinicInside
             // 
-            this.panel_clinicInside.Controls.Add(this.cmb_healthPlan);
-            this.panel_clinicInside.Controls.Add(this.cmb_person);
-            this.panel_clinicInside.Controls.Add(this.metroLabel4);
-            this.panel_clinicInside.Controls.Add(this.metroLabel3);
-            this.panel_clinicInside.Controls.Add(this.metroLabel2);
-            this.panel_clinicInside.Controls.Add(this.metroLabel1);
-            this.panel_clinicInside.Controls.Add(this.datepicker_date);
-            this.panel_clinicInside.Controls.Add(this.txt_id);
-            this.panel_clinicInside.Controls.Add(this.btn_save);
-            this.panel_clinicInside.Controls.Add(this.btn_cancel);
-            this.panel_clinicInside.HorizontalScrollbarBarColor = true;
-            this.panel_clinicInside.HorizontalScrollbarHighlightOnWheel = false;
-            this.panel_clinicInside.HorizontalScrollbarSize = 10;
-            this.panel_clinicInside.Location = new System.Drawing.Point(546, 12);
-            this.panel_clinicInside.Name = "panel_clinicInside";
-            this.panel_clinicInside.Size = new System.Drawing.Size(44, 321);
-            this.panel_clinicInside.TabIndex = 4;
-            this.panel_clinicInside.VerticalScrollbarBarColor = true;
-            this.panel_clinicInside.VerticalScrollbarHighlightOnWheel = false;
-            this.panel_clinicInside.VerticalScrollbarSize = 10;
-            // 
-            // cmb_healthPlan
-            // 
-            this.cmb_healthPlan.FormattingEnabled = true;
-            this.cmb_healthPlan.ItemHeight = 23;
-            this.cmb_healthPlan.Location = new System.Drawing.Point(181, 81);
-            this.cmb_healthPlan.Name = "cmb_healthPlan";
-            this.cmb_healthPlan.Size = new System.Drawing.Size(212, 29);
-            this.cmb_healthPlan.TabIndex = 7;
-            // 
-            // cmb_person
-            // 
-            this.cmb_person.FormattingEnabled = true;
-            this.cmb_person.ItemHeight = 23;
-            this.cmb_person.Location = new System.Drawing.Point(181, 48);
-            this.cmb_person.Name = "cmb_person";
-            this.cmb_person.Size = new System.Drawing.Size(212, 29);
-            this.cmb_person.TabIndex = 7;
+            this.Controls.Add(this.cmb_healthPlan);
+            this.Controls.Add(this.cmb_person);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.datepicker_date);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_cancel);
+            this.HorizontalScrollbarBarColor = true;
+            this.HorizontalScrollbarHighlightOnWheel = false;
+            this.HorizontalScrollbarSize = 10;
+            this.Location = new System.Drawing.Point(176, 12);
+            this.Name = "panel_clinicInside";
+            this.Size = new System.Drawing.Size(414, 321);
+            this.TabIndex = 4;
+            this.VerticalScrollbarBarColor = true;
+            this.VerticalScrollbarHighlightOnWheel = false;
+            this.VerticalScrollbarSize = 10;
             // 
             // metroLabel4
             // 
@@ -229,35 +172,39 @@
             this.btn_clinicAppointment.Size = new System.Drawing.Size(157, 42);
             this.btn_clinicAppointment.TabIndex = 2;
             this.btn_clinicAppointment.Text = "Consulta";
-            this.btn_clinicAppointment.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // listView1
+            // cmb_person
             // 
-            this.listView1.Location = new System.Drawing.Point(249, 67);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(249, 216);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.cmb_person.FormattingEnabled = true;
+            this.cmb_person.ItemHeight = 23;
+            this.cmb_person.Location = new System.Drawing.Point(181, 48);
+            this.cmb_person.Name = "cmb_person";
+            this.cmb_person.Size = new System.Drawing.Size(212, 29);
+            this.cmb_person.TabIndex = 7;
             // 
-            // TestForm
+            // cmb_healthPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 386);
-            this.Controls.Add(this.panel_Clinic);
-            this.Name = "TestForm";
-            this.Text = "TestForm";
-            this.panel_Clinic.ResumeLayout(false);
-            this.panel_clinicInside.ResumeLayout(false);
-            this.panel_clinicInside.PerformLayout();
-            this.ResumeLayout(false);
+            this.cmb_healthPlan.FormattingEnabled = true;
+            this.cmb_healthPlan.ItemHeight = 23;
+            this.cmb_healthPlan.Location = new System.Drawing.Point(181, 81);
+            this.cmb_healthPlan.Name = "cmb_healthPlan";
+            this.cmb_healthPlan.Size = new System.Drawing.Size(212, 29);
+            this.cmb_healthPlan.TabIndex = 7;
 
+            btn_save.MouseClick += Btn_save_MouseClick;
         }
 
-        #endregion
+        private void Btn_save_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            Appointment appointment = new Appointment();
+            
+            using (var dE = new Model.DataModel.databaseEntities())
+            {
+                dE.Appointments.Add(appointment);
+                dE.SaveChanges();
+            }
+        }
 
-        private MetroFramework.Controls.MetroPanel panel_Clinic;
-        private MetroFramework.Controls.MetroPanel panel_clinicInside;
         private MetroFramework.Controls.MetroButton btn_clinicBack;
         private MetroFramework.Controls.MetroButton btn_clinicPrescription;
         private MetroFramework.Controls.MetroButton btn_clinicHealtPlan;
@@ -274,6 +221,7 @@
         private MetroFramework.Controls.MetroButton btn_save;
         private MetroFramework.Controls.MetroComboBox cmb_healthPlan;
         private MetroFramework.Controls.MetroComboBox cmb_person;
-        private System.Windows.Forms.ListView listView1;
+
+        
     }
 }
