@@ -222,7 +222,7 @@ namespace MedicalClinic.Panel
 				else if (model == "doctor")
 				{
 					var results = from d in dE.People
-								  where d.specialization_id != null
+								  where d.specialization_id >= 0
 								  join spec in dE.Specializations on d.specialization_id equals spec.id
 								  select new
 								  {
@@ -258,14 +258,15 @@ namespace MedicalClinic.Panel
 				else if (model == "pacient")
 				{
 					var results = from p in dE.People
-								  where p.specialization_id == null
-								  select new
+                                  where p.specialization_id == 0
+                                  select new
 								  {
 									  Id = p.id,
 									  Nome = p.name,
 									  Idade = p.age,
 									  Telefone = p.phone,
-                                      Endereço = p.address
+                                      Endereço = p.address,
+                                      Spec = p.specialization_id
 								  };
 					string[] items = { "", "Identificador", "Nome", "Idade", "Telefone", "Endereço" };
 					foreach (string s in items)
