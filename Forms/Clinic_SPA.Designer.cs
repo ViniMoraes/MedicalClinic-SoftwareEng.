@@ -84,6 +84,6 @@
 
         private MetroFramework.Controls.MetroButton btn_goClinic;
         private MetroFramework.Controls.MetroButton btn_goSPA;
-        private MetroFramework.Controls.MetroPanel panel_initialPanel;
+        public MetroFramework.Controls.MetroPanel panel_initialPanel;
     }
 }

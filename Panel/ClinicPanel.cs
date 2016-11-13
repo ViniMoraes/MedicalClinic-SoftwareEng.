@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Controls;
+using MetroFramework.Forms;
+using MedicalClinic.Forms;
+using static MedicalClinic.SlidePanel;
+
 namespace MedicalClinic.Panel
 {
     class ClinicPanel : MetroPanel
@@ -159,7 +163,15 @@ namespace MedicalClinic.Panel
 
         private void Btn_clinicBack_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            Clinic_SPA temp = new Clinic_SPA();
+            MetroPanel initialPanel = temp.panel_initialPanel;
+            //temp.Dispose();
+            Clinic_SPA clinic_SPAForm = Clinic_SPA.get();
+            clinic_SPAForm.Controls.Add(initialPanel);
+            SlidePanel.setPanel(Slide.Left, initialPanel, this);
+            clinic_SPAForm.Controls.Remove(this);
+            clinic_SPAForm.actualPanel = initialPanel;
+            this.Dispose();
         }
 
         private void switchPanel(PanelPosition panelPosition){

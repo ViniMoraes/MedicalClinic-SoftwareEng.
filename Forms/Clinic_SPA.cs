@@ -15,12 +15,13 @@ namespace MedicalClinic.Forms
 {
     public partial class Clinic_SPA : MetroForm
     {
-
-        MetroPanel actualPanel;
+        static Clinic_SPA clinic_SPAForm;
+        public MetroPanel actualPanel { get; set; }
         public Clinic_SPA()
         {
             InitializeComponent();
             actualPanel = panel_initialPanel;
+            clinic_SPAForm = this;
         }
 
         private void btn_goSPA_Click(object sender, EventArgs e)
@@ -35,6 +36,11 @@ namespace MedicalClinic.Forms
             Controls.Remove(actualPanel);
             actualPanel.Dispose();
             actualPanel = newPanel;
+        }
+
+        public static Clinic_SPA get()
+        {
+            return clinic_SPAForm;
         }
     }
 }
