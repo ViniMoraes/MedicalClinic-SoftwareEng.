@@ -192,6 +192,13 @@ namespace MedicalClinic.Panel
             this.cmb_healthPlan.TabIndex = 7;
 
             btn_save.MouseClick += Btn_save_MouseClick;
+            btn_cancel.MouseClick += Btn_cancel_MouseClick;
+        }
+
+        private void Btn_cancel_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            ClinicPanel clinicPanel = ClinicPanel.getThis();
+            clinicPanel.switchLateralPanel(new ListViewPanel(1), SlidePanel.Slide.Right);
         }
 
         private void Btn_save_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)

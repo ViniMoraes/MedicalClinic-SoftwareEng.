@@ -54,7 +54,7 @@ namespace MedicalClinic
 
             if (slide == Slide.Up)
             {
-                speedY = -5;
+                speedY = -10;
                 newPanel.Location = new Point(newPanel.Location.X, newPanel.Location.Y + oldPanel.Size.Height);
                 while (newPanel.Location.Y + speedY > finalPoint.Y)
                 {
@@ -67,7 +67,7 @@ namespace MedicalClinic
 
             if (slide == Slide.Down)
             {
-                speedY = 5;
+                speedY = 10;
                 newPanel.Location = new Point(newPanel.Location.X, newPanel.Location.Y - oldPanel.Size.Height);
                 while (newPanel.Location.Y + speedY < finalPoint.Y)
                 {
