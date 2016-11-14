@@ -24,7 +24,7 @@ namespace MedicalClinic.Panel
         //Doutores -    2
         //Pacientes -   3
         //Convenios -   4
-        //receitas -    5
+        //Receitas -    5
 
         public enum PanelPosition
         {

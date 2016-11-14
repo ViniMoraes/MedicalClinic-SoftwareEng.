@@ -168,8 +168,17 @@ namespace MedicalClinic.Panel
 
 		private void newDoctor(bool edit)
 		{
-
-		}
+            DoctorPanel appointmentPanel = new DoctorPanel();
+            if (edit)
+            {
+                //TODO
+            }
+            else
+            {
+                ClinicPanel clinicPanel = ClinicPanel.getThis();
+                clinicPanel.switchLateralPanel(appointmentPanel, SlidePanel.Slide.Left);
+            }
+        }
 
 		private void newPacient(bool edit)
 		{

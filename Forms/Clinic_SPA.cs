@@ -26,6 +26,7 @@ namespace MedicalClinic.Forms
 
         private void btn_goSPA_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btn_goClinic_Click(object sender, EventArgs e)
