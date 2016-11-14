@@ -183,15 +183,15 @@ namespace MedicalClinic.Panel
 
         private void Btn_save_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            Appointment appointment = new Appointment();
+            Doctor_Appointment doctorAppointment = new Doctor_Appointment();
 
             using (var dE = new Model.DataModel.databaseEntities())
             {
-                dE.Appointments.Add(appointment);
+                dE.Doctor_Appointment.Add(doctorAppointment);
                 dE.SaveChanges();
             }
             ClinicPanel clinicPanel = ClinicPanel.getThis();
-            clinicPanel.switchLateralPanel(new ListViewPanel(1), SlidePanel.Slide.Right);
+            clinicPanel.switchLateralPanel(new ListViewPanel(2), SlidePanel.Slide.Right);
         }
 
         private MetroFramework.Controls.MetroButton btn_clinicBack;
