@@ -8,18 +8,16 @@ using MedicalClinic.Model.DataModel;
 
 namespace MedicalClinic.Panel
 {
-    class DoctorPanel : MetroPanel
+    class HealthPanel : MetroPanel
     {
 
-        public DoctorPanel()
+        public HealthPanel()
         {
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txt_id = new MetroFramework.Controls.MetroTextBox();
             this.btn_save = new MetroFramework.Controls.MetroButton();
@@ -38,8 +36,6 @@ namespace MedicalClinic.Panel
             // 
             this.Controls.Add(this.cmb_healthPlan);
             this.Controls.Add(this.cmb_person);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.btn_save);
@@ -54,24 +50,6 @@ namespace MedicalClinic.Panel
             this.VerticalScrollbarBarColor = true;
             this.VerticalScrollbarHighlightOnWheel = false;
             this.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(44, 91);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(64, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Especialização";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(44, 58);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Idade";
             //
             // metroLabel1
             //
@@ -178,7 +156,7 @@ namespace MedicalClinic.Panel
         private void Btn_cancel_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             ClinicPanel clinicPanel = ClinicPanel.getThis();
-            clinicPanel.switchLateralPanel(new ListViewPanel(2), SlidePanel.Slide.Right);
+            clinicPanel.switchLateralPanel(new ListViewPanel(4), SlidePanel.Slide.Right);
         }
 
         private void Btn_save_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -191,7 +169,7 @@ namespace MedicalClinic.Panel
                 dE.SaveChanges();
             }
             ClinicPanel clinicPanel = ClinicPanel.getThis();
-            clinicPanel.switchLateralPanel(new ListViewPanel(2), SlidePanel.Slide.Right);
+            clinicPanel.switchLateralPanel(new ListViewPanel(4), SlidePanel.Slide.Right);
         }
 
         private MetroFramework.Controls.MetroButton btn_clinicBack;
@@ -201,6 +179,7 @@ namespace MedicalClinic.Panel
         private MetroFramework.Controls.MetroButton btn_clinicDoctors;
         private MetroFramework.Controls.MetroButton btn_clinicAppointment;
         private MetroFramework.Controls.MetroButton btn_cancel;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;

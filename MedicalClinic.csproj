@@ -168,7 +168,16 @@
     <Compile Include="Panel\DoctorPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Panel\HealthPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Panel\ListViewPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\PacientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\PrecriptionPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />

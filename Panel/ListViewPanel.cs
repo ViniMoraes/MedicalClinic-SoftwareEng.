@@ -168,7 +168,7 @@ namespace MedicalClinic.Panel
 
 		private void newDoctor(bool edit)
 		{
-            DoctorPanel appointmentPanel = new DoctorPanel();
+            DoctorPanel doctorPanel = new DoctorPanel();
             if (edit)
             {
                 //TODO
@@ -176,24 +176,53 @@ namespace MedicalClinic.Panel
             else
             {
                 ClinicPanel clinicPanel = ClinicPanel.getThis();
-                clinicPanel.switchLateralPanel(appointmentPanel, SlidePanel.Slide.Left);
+                clinicPanel.switchLateralPanel(doctorPanel, SlidePanel.Slide.Left);
             }
         }
 
 		private void newPacient(bool edit)
 		{
+            PacientPanel pacientPanel = new PacientPanel();
+            if (edit)
+            {
+                //TODO
+            }
+            else
+            {
+                ClinicPanel clinicPanel = ClinicPanel.getThis();
+                clinicPanel.switchLateralPanel(pacientPanel, SlidePanel.Slide.Left);
+            }
 
-		}
+        }
 
 		private void newHealthPlan(bool edit)
 		{
-
-		}
+            HealthPanel healthPlan = new HealthPanel();
+            if (edit)
+            {
+                //TODO
+            }
+            else
+            {
+                ClinicPanel clinicPanel = ClinicPanel.getThis();
+                clinicPanel.switchLateralPanel(healthPlan, SlidePanel.Slide.Left);
+            }
+        }
 
 		private void newPrescription(bool edit)
 		{
+            PrecriptionPanel prescription = new PrecriptionPanel();
+            if (edit)
+            {
+                //TODO
+            }
+            else
+            {
+                ClinicPanel clinicPanel = ClinicPanel.getThis();
+                clinicPanel.switchLateralPanel(prescription, SlidePanel.Slide.Left);
+            }
 
-		}
+        }
 
 		private void loadList(string model)
 		{

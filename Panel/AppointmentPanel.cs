@@ -210,6 +210,8 @@ namespace MedicalClinic.Panel
                 dE.Appointments.Add(appointment);
                 dE.SaveChanges();
             }
+            ClinicPanel clinicPanel = ClinicPanel.getThis();
+            clinicPanel.switchLateralPanel(new ListViewPanel(1), SlidePanel.Slide.Right);
         }
 
         private MetroFramework.Controls.MetroButton btn_clinicBack;

@@ -8,10 +8,10 @@ using MedicalClinic.Model.DataModel;
 
 namespace MedicalClinic.Panel
 {
-    class DoctorPanel : MetroPanel
+    class PacientPanel : MetroPanel
     {
 
-        public DoctorPanel()
+        public PacientPanel()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace MedicalClinic.Panel
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(64, 19);
             this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Especialização";
+            this.metroLabel3.Text = "Endereço";
             // 
             // metroLabel2
             // 
@@ -178,7 +178,7 @@ namespace MedicalClinic.Panel
         private void Btn_cancel_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             ClinicPanel clinicPanel = ClinicPanel.getThis();
-            clinicPanel.switchLateralPanel(new ListViewPanel(2), SlidePanel.Slide.Right);
+            clinicPanel.switchLateralPanel(new ListViewPanel(3), SlidePanel.Slide.Right);
         }
 
         private void Btn_save_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -191,7 +191,7 @@ namespace MedicalClinic.Panel
                 dE.SaveChanges();
             }
             ClinicPanel clinicPanel = ClinicPanel.getThis();
-            clinicPanel.switchLateralPanel(new ListViewPanel(2), SlidePanel.Slide.Right);
+            clinicPanel.switchLateralPanel(new ListViewPanel(3), SlidePanel.Slide.Right);
         }
 
         private MetroFramework.Controls.MetroButton btn_clinicBack;
