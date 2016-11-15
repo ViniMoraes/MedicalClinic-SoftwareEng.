@@ -28,14 +28,10 @@ namespace MedicalClinic.Panel
             this.btn_clinicPacients = new MetroFramework.Controls.MetroButton();
             this.btn_clinicDoctors = new MetroFramework.Controls.MetroButton();
             this.btn_clinicAppointment = new MetroFramework.Controls.MetroButton();
-            this.cmb_person = new MetroFramework.Controls.MetroComboBox();
-            this.cmb_healthPlan = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // panel_clinicInside
             // 
-            this.Controls.Add(this.cmb_healthPlan);
-            this.Controls.Add(this.cmb_person);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.btn_save);
@@ -130,24 +126,7 @@ namespace MedicalClinic.Panel
             this.btn_clinicAppointment.Size = new System.Drawing.Size(157, 42);
             this.btn_clinicAppointment.TabIndex = 2;
             this.btn_clinicAppointment.Text = "Consulta";
-            // 
-            // cmb_person
-            // 
-            this.cmb_person.FormattingEnabled = true;
-            this.cmb_person.ItemHeight = 23;
-            this.cmb_person.Location = new System.Drawing.Point(181, 48);
-            this.cmb_person.Name = "cmb_person";
-            this.cmb_person.Size = new System.Drawing.Size(212, 29);
-            this.cmb_person.TabIndex = 7;
-            // 
-            // cmb_healthPlan
-            // 
-            this.cmb_healthPlan.FormattingEnabled = true;
-            this.cmb_healthPlan.ItemHeight = 23;
-            this.cmb_healthPlan.Location = new System.Drawing.Point(181, 81);
-            this.cmb_healthPlan.Name = "cmb_healthPlan";
-            this.cmb_healthPlan.Size = new System.Drawing.Size(212, 29);
-            this.cmb_healthPlan.TabIndex = 7;
+           
 
             btn_save.MouseClick += Btn_save_MouseClick;
             btn_cancel.MouseClick += Btn_cancel_MouseClick;
@@ -179,14 +158,9 @@ namespace MedicalClinic.Panel
         private MetroFramework.Controls.MetroButton btn_clinicDoctors;
         private MetroFramework.Controls.MetroButton btn_clinicAppointment;
         private MetroFramework.Controls.MetroButton btn_cancel;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txt_id;
         private MetroFramework.Controls.MetroButton btn_save;
-        private MetroFramework.Controls.MetroComboBox cmb_healthPlan;
-        private MetroFramework.Controls.MetroComboBox cmb_person;
 
 
     }

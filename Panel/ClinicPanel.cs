@@ -172,6 +172,7 @@ namespace MedicalClinic.Panel
             clinic_SPAForm.Controls.Remove(this);
             clinic_SPAForm.actualPanel = initialPanel;
             this.Dispose();
+
         }
 
         private void switchPanel(PanelPosition panelPosition){

@@ -30,14 +30,14 @@ namespace MedicalClinic.Panel
             this.btn_clinicPacients = new MetroFramework.Controls.MetroButton();
             this.btn_clinicDoctors = new MetroFramework.Controls.MetroButton();
             this.btn_clinicAppointment = new MetroFramework.Controls.MetroButton();
-            this.cmb_person = new MetroFramework.Controls.MetroComboBox();
-            this.cmb_healthPlan = new MetroFramework.Controls.MetroComboBox();
+            this.pacient_adress = new MetroFramework.Controls.MetroTextBox();
+            this.pacient_age = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // panel_clinicInside
             // 
-            this.Controls.Add(this.cmb_healthPlan);
-            this.Controls.Add(this.cmb_person);
+            this.Controls.Add(this.pacient_age);
+            this.Controls.Add(this.pacient_adress);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -155,21 +155,21 @@ namespace MedicalClinic.Panel
             // 
             // cmb_person
             // 
-            this.cmb_person.FormattingEnabled = true;
-            this.cmb_person.ItemHeight = 23;
-            this.cmb_person.Location = new System.Drawing.Point(181, 48);
-            this.cmb_person.Name = "cmb_person";
-            this.cmb_person.Size = new System.Drawing.Size(212, 29);
-            this.cmb_person.TabIndex = 7;
+
+            this.pacient_age.Location = new System.Drawing.Point(181, 48);
+            this.pacient_age.Name = "pacient_age";
+            this.pacient_age.Size = new System.Drawing.Size(212, 23);
+            this.pacient_age.TabIndex = 4;
+
             // 
             // cmb_healthPlan
-            // 
-            this.cmb_healthPlan.FormattingEnabled = true;
-            this.cmb_healthPlan.ItemHeight = 23;
-            this.cmb_healthPlan.Location = new System.Drawing.Point(181, 81);
-            this.cmb_healthPlan.Name = "cmb_healthPlan";
-            this.cmb_healthPlan.Size = new System.Drawing.Size(212, 29);
-            this.cmb_healthPlan.TabIndex = 7;
+            //
+
+            this.pacient_adress.Location = new System.Drawing.Point(181, 81);
+            this.pacient_adress.Name = "pacient_adress";
+            this.pacient_adress.Size = new System.Drawing.Size(212, 23);
+            this.pacient_adress.TabIndex = 4;
+
 
             btn_save.MouseClick += Btn_save_MouseClick;
             btn_cancel.MouseClick += Btn_cancel_MouseClick;
@@ -206,8 +206,8 @@ namespace MedicalClinic.Panel
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txt_id;
         private MetroFramework.Controls.MetroButton btn_save;
-        private MetroFramework.Controls.MetroComboBox cmb_healthPlan;
-        private MetroFramework.Controls.MetroComboBox cmb_person;
+        private MetroFramework.Controls.MetroTextBox pacient_adress;
+        private MetroFramework.Controls.MetroTextBox pacient_age;
 
 
     }
